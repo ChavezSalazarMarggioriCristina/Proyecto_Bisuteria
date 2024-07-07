@@ -15,10 +15,35 @@ class Pedido {
     }
 
     public function calcularTotal() {
-        // Lógica para calcular el total
+        $this->total = $this->cliente->getCarrito()->calcularTotal();
     }
 
     public function confirmarPago() {
-        // Lógica para confirmar el pago
+        $this->estado = 'pagado';
+    }
+
+    public function getId() {
+        return $this->id;
+    }
+
+    public function setId($id) {
+        $this->id = $id;
+    }
+
+    public function getCliente() {
+        return $this->cliente;
+    }
+
+    public function getFecha() {
+        return $this->fecha;
+    }
+
+    public function getTotal() {
+        return $this->total;
+    }
+
+    public function getEstado() {
+        return $this->estado;
     }
 }
+?>
